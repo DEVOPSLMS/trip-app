@@ -14,7 +14,8 @@
 
     <section class="search">
         <form action="">
-            <input type="text" name="query" id="searchbar"placeholder="Search Bookings & Flights">
+            <input type="text" name="query" [(ngModel)]="query"id="searchbar"placeholder="Search Bookings & Flights">
+            <a class="btn btn-primary" [routerLink]="['/search',query]">Search</a>
         </form>
     </section>
 </body>
