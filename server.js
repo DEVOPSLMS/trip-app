@@ -2,27 +2,44 @@ const port = 8000;
 const express = require('express');
 const axios = require('axios');
 require('dotenv').config(); // Load environment variables
-
+const cors = require('cors')
 const app = express();
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'accept: application/json');
-    res.setHeader('Access-Control-Allow-Credentials', 'true'); // If cookies are needed
-    next();
-});
-app.listen(8000, () => console.log('Server is running on port ${port}'))
+
+app.use(cors({
+    origin: '*', // Temporarily allow all origins
+    methods: ['GET', 'POST'],
+    allowedHeaders:['Content-Type','Authorization']
+}));
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+  });
 const apiKey = process.env.UNKNOWN_KEY; // Ensure this is set
 const sampleData = {
     UNKNOWN: apiKey // Using environment variable in sample data
 };
 app.get('/query', (req, res) => {
-    const url = 'https://api.content.tripadvisor.com/api/v1/location/search?key=9B8AF48CA7184FF29D9D418341D223C9&searchQuery=singapore&language=en';
-    const options = { method: 'GET', headers: { accept: 'application/json' } };
+    const query = req.query.query;
+    const options = { 
+        method: 'GET', 
+        url:'https://api.content.tripadvisor.com/api/v1/location/search?key='+apiKey+'&searchQuery='+query+'&language=en',
+        headers: { accept: 'application/json' },
+         };
 
-    fetch(url, options)
-        .then(res => res.json())
-        .then(json => console.log(json))
-        .catch(err => console.error(err));
+    axios.request(options).then((response)=>{
+        res.json(response.data);
+    }).catch((error)=>{
+        console.log(error);
+    })
 });
+app.get('/test', (req, res) => {
+    // Access the query parameter sent by Angular
+    const query = req.query.query;
+    
+    // Do something with the query (e.g., return results based on the query)
+    res.json({ message: `Received query: ${query}` });
+    console.log(query);
+  });
+  app.options('*', cors());
+
 module.exports = app;

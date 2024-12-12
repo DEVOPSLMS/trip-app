@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-home',
   standalone: false,
@@ -9,8 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  ngOnInit(): void {
+  
     
+  query:string='';
+  ngOnInit(): void {
+    console.log(this.query);
+   
   }
 
 }

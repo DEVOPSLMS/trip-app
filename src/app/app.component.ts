@@ -6,9 +6,7 @@ import * as dotenv from 'dotenv'
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'trip-app';
-  ngOnInit(): void {
-    console.log(process.env["UNKNOWN_KEY"]);
-  }
+ 
 }
