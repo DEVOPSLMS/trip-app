@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
 import { SearchComponent } from './component/search/search.component';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient ,HttpClient,HttpHeaders} from '@angular/common/http';
 import { AuthService } from './service/auth.service';
 @NgModule({
   declarations: [

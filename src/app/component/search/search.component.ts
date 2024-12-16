@@ -16,10 +16,13 @@ export class SearchComponent implements OnInit{
   private sub: any;
 constructor(private authService:AuthService,private route:ActivatedRoute){}
   ngOnInit(): void {
+    console.log("WTF IS HAPPENING");
     this.sub=this.route.params.subscribe(params=>{
       this.query=params['query'];
-      this.authService.getHotel(this.query).subscribe((details:any)=>{
-        console.log(details);
+      console.log(this.query);
+      this.authService.getQuery(this.query).subscribe((query:any)=>{
+  
+    
       })
     })
   }
