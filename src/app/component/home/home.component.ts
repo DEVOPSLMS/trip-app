@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, } from '@angular/core';
 
 
 @Component({
@@ -8,14 +8,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  {
 
   
     
   query:string='';
-  ngOnInit(): void {
-    console.log(this.query);
-   
-  }
+  
 
 }
