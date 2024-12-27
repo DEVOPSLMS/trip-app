@@ -7,11 +7,14 @@ import { HomeComponent } from './component/home/home.component';
 import { SearchComponent } from './component/search/search.component';
 import { provideHttpClient ,HttpClient,HttpHeaders} from '@angular/common/http';
 import { AuthService } from './service/auth.service';
+import { DetailsComponent } from './component/details/details.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    DetailsComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+.container {
+    display: grid;
+    gap:10px;
+    grid-template-columns: 400px 400px 400px;
+    padding: 0 20% 0 20%;
+    justify-content:space-around;
+}
+
+.photo {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    padding: 0 10px 0 0;
+}

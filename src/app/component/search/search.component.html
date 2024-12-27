@@ -1,1 +1,26 @@
-<p>search works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="container" *ngIf="details && details.length > 0">
+            <div class="header" *ngFor="let detail of details">
+                <div class="text">
+                    <h1 *ngIf="!detail.image_url">Loading image...</h1>
+
+                    <img class="photo"*ngIf="detail.image_url" [src]="detail.image_url" alt="{{ detail.name }} Image" />
+                    <h1 >{{detail.name}}</h1><a [routerLink]="['/details',detail.location_id]">See More</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>
