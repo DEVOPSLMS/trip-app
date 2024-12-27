@@ -9,23 +9,31 @@ export class AuthService {
 
   constructor() { }
   getQuery(query: string) {
-      console.log("what is happening")
-        return this.http.post(`https://trip-app-ashen-mu.vercel.app/api/query?query=${query}`, {
-          headers: {
-            'accept': 'application/json',
-            'Referer': 'https://trip-app-ashen-mu.vercel.app/'
-          }
-        });
-  }
-  getQueryDetails(locationID: string) {
-    
-    return this.http.post(`https://trip-app-ashen-mu.vercel.app/api/querydetails?locationid=${locationID}`, {
+    console.log("what is happening")
+    return this.http.get(`https://trip-app-ashen-mu.vercel.app/api/query?query=${query}`, {
       headers: {
         'accept': 'application/json',
-        'Referer': 'https://trip-app-ashen-mu.vercel.app/'
+        'X-Referer': 'https://trip-app-80a28.web.app'
       }
     });
-  
+  }
+  getQueryDetails(locationid: string) {
 
-}
+    return this.http.get(`https://trip-app-ashen-mu.vercel.app/api/querydetails?locationid=${locationid}`, {
+      headers: {
+        'accept': 'application/json',
+        'X-Referer': 'https://trip-app-80a28.web.app'
+      }
+    });
+  }
+  getQueryImage(locationid: string) {
+
+    return this.http.get(`https://trip-app-ashen-mu.vercel.app/api/queryimage?locationid=${locationid}`, {
+      headers: {
+        'accept': 'application/json',
+        'X-Referer': 'https://trip-app-80a28.web.app'
+      }
+    });
+  }
+
 }
