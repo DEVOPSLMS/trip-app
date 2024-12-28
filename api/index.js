@@ -17,7 +17,9 @@ const https = require('https');
 
 app.get('/api/query', (req, res) => {
   const query= req.query.query;
-  const url = `https://api.content.tripadvisor.com/api/v1/location/search?key=${apiKey}&searchQuery=${query}&language=en`;
+  const category=req.query.category;
+  console.log(category);
+  const url = `https://api.content.tripadvisor.com/api/v1/location/search?key=${apiKey}&searchQuery=${query}&category=${category}&language=en`;
 
   https.get(url, { headers: { accept: 'application/json',Referer:"https://trip-app-ashen-mu.vercel.app/" } }, (apiRes) => {
     let data = '';
@@ -45,6 +47,7 @@ app.get('/api/query', (req, res) => {
 app.get('/api/querydetails', (req, res) => {
  
   const locationID= req.query.locationid;
+  
   const url = `https://api.content.tripadvisor.com/api/v1/location/${locationID}/details?language=en&currency=USD&key=${apiKey}`;
 
   https.get(url, { headers: { accept: 'application/json',Referer:"https://trip-app-ashen-mu.vercel.app/" } }, (apiRes) => {
@@ -73,6 +76,7 @@ app.get('/api/querydetails', (req, res) => {
 app.get('/api/queryimage', (req, res) => {
  
   const locationID= req.query.locationid;
+  console.log
   const url = `https://api.content.tripadvisor.com/api/v1/location/${locationID}/photos?language=en&key=${apiKey}`;
 
   https.get(url, { headers: { accept: 'application/json',Referer:"https://trip-app-ashen-mu.vercel.app/" } }, (apiRes) => {

@@ -24,8 +24,8 @@ export class SearchComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.query = params['query'];
       console.log(this.query);
-
-      this.authService.getQuery(this.query).subscribe((query: any) => {
+      this.category =params['category'];
+      this.authService.getQuery(this.query,this.category).subscribe((query: any) => {
         this.details = query.data;
 
         this.details.forEach((element: any, index: number) => {
