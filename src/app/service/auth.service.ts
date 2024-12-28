@@ -8,9 +8,9 @@ export class AuthService {
   private http = inject(HttpClient);
 
   constructor() { }
-  getQuery(query: string) {
+  getQuery(query: string ,category:string) {
     console.log("what is happening")
-    return this.http.get(`https://trip-app-ashen-mu.vercel.app/api/query?query=${query}`, {
+    return this.http.get(`https://trip-app-ashen-mu.vercel.app/api/query?query=${query}&category=${category}`, {
       headers: {
         'accept': 'application/json',
         'X-Referer': 'https://trip-app-80a28.web.app'
