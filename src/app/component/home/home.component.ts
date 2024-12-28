@@ -1,5 +1,7 @@
 import { Component, } from '@angular/core';
 
+declare const console1:any;
+declare const openCity:any;
 
 @Component({
   selector: 'app-home',
@@ -10,8 +12,8 @@ import { Component, } from '@angular/core';
 })
 export class HomeComponent  {
 
-  
-    
+ 
+   
   query:string='';
   
 

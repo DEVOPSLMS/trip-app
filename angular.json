@@ -39,7 +39,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/scripts/functions.js"]
           },
           "configurations": {
             "production": {
@@ -98,7 +98,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/scripts/functions.js"]
           }
         }
       }

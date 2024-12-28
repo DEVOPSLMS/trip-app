@@ -5,19 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trips & Hotels Bookings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="/functions.js"></script>
 </head>
+<script>
+    
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+</script>
 
 <body>
+    
     <section class="header">
 
     </section>
+    <section class="header">
+        <h1 class="header-text">Where are you headed?</h1>
 
-    <section class="search">
+        <div class="tabs">
+            <button class="tablinks" onclick="openCity(event, 'Hotel')"> <span class="material-symbols-outlined">
+                    apartment</span>Hotel</button>
+            <button class="tablinks" onclick="openCity(event, 'Attractions')"><span class="material-symbols-outlined">
+                    attractions
+                </span>Attractions</button>
+            <button class="tablinks" onclick="openCity(event, 'Restaurant')"><span class="material-symbols-outlined">
+                    restaurant
+                </span>Restaurant</button>
+        </div>
         <form action="">
-            <input type="text" name="query" [(ngModel)]="query"id="searchbar"placeholder="Search Bookings & Flights">
-            <a class="btn btn-primary" [routerLink]="['/search',query]">Search</a>
+            <div id="Hotel" class="tabcontent">
+                <input type="text" name="" id="" placeholder="Search for Hotels" name="query" [(ngModel)]="query">
+                <br>
+                <a [routerLink]="['/search',query,'hotels']"><button type="button">Search</button></a>
+            </div>
+            <div id="Attractions" class="tabcontent">
+                <input type="text" name="" id="" placeholder="Search for Attractions" name="query" [(ngModel)]="query">
+                <br>
+                <a [routerLink]="['/search',query,'hotels']"><button type="button">Search</button></a>
+            </div>
+            <div id="Restaurant" class="tabcontent">
+                <input type="text" name="" id="" placeholder="Search for Restaurant" name="query" [(ngModel)]="query">
+                <br>
+                <a [routerLink]="['/search',query,'hotels']"><button type="button">Search</button></a>
+            </div>
         </form>
     </section>
+
 </body>
 
 </html>
