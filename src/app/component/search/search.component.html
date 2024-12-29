@@ -14,8 +14,15 @@
                 <div class="text">
                     <h1 *ngIf="!detail.image_url">Loading image...</h1>
 
-                    <img class="photo"*ngIf="detail.image_url" [src]="detail.image_url" alt="{{ detail.name }} Image" />
-                    <h1 >{{detail.name}}</h1><a [routerLink]="['/details',detail.location_id]">See More</a>
+                    <img class="photo" *ngIf="detail.image_url" [src]="detail.image_url"
+                        alt="{{ detail.name }} Image" />
+                    <h1 [routerLink]="['/details',detail.location_id]" class="location_name">{{detail.name}}</h1>
+                    <div class="rating_review">
+                        <img class="" *ngIf="detail.location_rating" [src]="detail.location_rating" />
+                        <a>{{detail.location_reviews}} reviews</a>
+                       
+                    </div>
+
                 </div>
             </div>
         </div>

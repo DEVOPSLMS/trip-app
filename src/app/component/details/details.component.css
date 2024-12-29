@@ -1,0 +1,101 @@
+body {
+    font-family: 'Poppins', serif;
+
+}
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid black; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+   margin: auto;
+   margin-top: 30%;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.location_photo{
+    width: 150px;
+}
+
+
+.location{
+    display: grid;
+    grid-template-columns: auto auto ;
+}
+span{
+   font-size: 14px;
+}
+.location_details2{
+    margin-top:10px;
+}
+.location_images{
+    width: 250px;
+    height: 150px;
+}
+.image_gallery{
+    display: grid;
+    grid-template-columns: auto auto   auto;
+}
+#slideshow {
+    overflow: hidden;
+    height: 510px;
+    width: 728px;
+    margin: 0 auto;
+}
+
+/* Style each of the sides 
+  with a fixed width and height */
+.slide {
+    float: left;
+    height: 510px;
+    width: 728px;
+}
+.slide-number img{
+    height: 510px;
+    width: 728px;
+}
+/* Add animation to the slides */
+.slide-wrapper {
+
+    /* Calculate the total width on the
+    basis of number of slides */
+    width: calc(728px * 5);
+
+    /* Specify the animation with the
+    duration and speed */
+    animation: slide 10s ease infinite;
+}
+
+
+
+/* Define the animation 
+  for the slideshow */
+@keyframes slide {
+
+    /* Calculate the margin-left for 
+    each of the slides */
+    20% {
+        margin-left: 0px;
+    }
+
+    40% {
+        margin-left: calc(-728px * 1);
+    }
+
+    60% {
+        margin-left: calc(-728px * 2);
+    }
+
+    80% {
+        margin-left: calc(-728px * 3);
+    }
+    100% {
+        margin-left: calc(-728px * 4);
+    }
+}
+

@@ -11,4 +11,13 @@
     height: 250px;
     object-fit: cover;
     padding: 0 10px 0 0;
+    border-radius: 25px;
+}
+.location_name:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+body {
+    font-family: 'Poppins', serif;
+
 }

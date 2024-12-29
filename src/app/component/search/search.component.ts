@@ -16,6 +16,8 @@ export class SearchComponent implements OnInit {
   category: string = '';
   location_id: string = '';
   image: string = '';
+  location_rating:string='';
+  location_reviews:number=0;
   locationImages: { [key: string]: string } = {};
   private sub: any;
   constructor(private authService: AuthService, private route: ActivatedRoute) { }
@@ -32,14 +34,20 @@ export class SearchComponent implements OnInit {
           this.location_id = element.location_id;
 
           this.authService.getQueryImage(this.location_id).subscribe((query: any) => {
-            console.log(query);
-            console.log(query.data.length);
+            
             if (query.data.length > 0) {
-              this.image = query.data[0].images.medium.url;
+              this.image = query.data[0].images.large.url;
               this.details[index].image_url = this.image;
-              console.log(this.image);
+             
             }
 
+          })
+          this.authService.getQueryDetails(this.location_id).subscribe((locationdetails:any)=>{
+    
+            this.location_rating= locationdetails.rating_image_url;
+            this.location_reviews=locationdetails.num_reviews;
+            this.details[index].location_rating=this.location_rating;
+            this.details[index].location_reviews=this.location_reviews
           })
         })
       })

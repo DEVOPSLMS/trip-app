@@ -1,1 +1,66 @@
-<p>details works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section *ngIf="details" class="location">
+
+        <div class="location_details1">
+            <h1 class="location_name">
+                {{details.name}}
+            </h1>
+            <div class="review">
+                <img src="{{details.rating_image_url}}" alt="" class="location_photo">
+                <p><span class="material-symbols-outlined">
+                        reviews
+                    </span> {{details.num_reviews}} reviews</p>
+                <p>{{details.ranking_data.ranking_string}}</p>
+
+            </div>
+
+        </div>
+
+        <div class="location_details2">
+
+            <br> <br> <br><br>
+            <p><span class="material-symbols-outlined">
+                    location_on
+                </span>{{details.address_obj.address_string}}</p>
+            <p><span class="material-symbols-outlined">
+                    phone_in_talk
+                </span>{{details.phone}}</p>
+
+        </div>
+
+
+
+
+    </section>
+    <hr>
+    <div id="slideshow">
+        <div class="slide-wrapper">
+
+            <!-- Define each of the slides
+         and write the content -->
+
+            <div class="slide" *ngFor="let images of location_images">
+                <h1 class="slide-number">
+                    <img src="{{images.images.large.url}}" alt="">
+                </h1>
+            </div>
+          
+        </div>
+    </div>
+  
+    <!-- <section *ngIf ="!details ">
+        <div class="loader"></div>
+    </section> -->
+</body>
+
+</html>

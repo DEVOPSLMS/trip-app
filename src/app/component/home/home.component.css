@@ -30,6 +30,9 @@ html{
     opacity: 0.6;
     text-decoration: underline;
 }
+.tabs button:focus{
+    text-decoration: underline;
+}
 .tabs button span{
     padding-left: 10px;
 }
