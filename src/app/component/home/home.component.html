@@ -6,77 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trips & Hotels Bookings</title>
 
-    <script src="/functions.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <style>
+        .active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<script>
-    
-function openCity(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
 
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
 
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-</script>
 
 <body>
-    
-    <section class="header">
 
-    </section>
     <section class="header">
         <h1 class="header-text">Where are you headed?</h1>
-
         <div class="tabs">
-            <button class="tablinks" onclick="openCity(event, 'SearchAll')"> <span class="material-symbols-outlined">
-                house</span>Search All</button>
-            <button class="tablinks" onclick="openCity(event, 'Hotel')"> <span class="material-symbols-outlined">
-                    apartment</span>Hotel</button>
-            <button class="tablinks" onclick="openCity(event, 'Attractions')"><span class="material-symbols-outlined">
-                    attractions
-                </span>Attractions</button>
-            <button class="tablinks" onclick="openCity(event, 'Restaurant')"><span class="material-symbols-outlined">
-                    restaurant
-                </span>Restaurant</button>
+            <button class="tablinks" onclick="openCity(event, 'SearchAll')">
+                <span class="material-symbols-outlined">house</span>Search All
+            </button>
+            <button class="tablinks" onclick="openCity(event, 'Hotel')">
+                <span class="material-symbols-outlined">apartment</span>Hotel
+            </button>
+            <button class="tablinks" onclick="openCity(event, 'Attractions')">
+                <span class="material-symbols-outlined">attractions</span>Attractions
+            </button>
+            <button class="tablinks" onclick="openCity(event, 'Restaurant')">
+                <span class="material-symbols-outlined">restaurant</span>Restaurant
+            </button>
         </div>
         <form action="">
-            <div id="SearchAll" class="tabcontent">
-                <input type="text" name="" id="" placeholder="Search for everything" name="query" [(ngModel)]="query">
+            <div id="SearchAll" class="tabcontent" style="display: block;">
+                <input type="text" placeholder="Search for everything" name="query" [(ngModel)]="query">
                 <br>
                 <a [routerLink]="['/search',query,'']"><button type="button">Search</button></a>
             </div>
-            <div id="Hotel" class="tabcontent">
-                <input type="text" name="" id="" placeholder="Search for Hotels" name="query" [(ngModel)]="query">
+            <div id="Hotel" class="tabcontent" style="display: none;">
+                <input type="text" placeholder="Search for Hotels" name="query" [(ngModel)]="query">
                 <br>
                 <a [routerLink]="['/search',query,'hotels']"><button type="button">Search</button></a>
             </div>
-            <div id="Attractions" class="tabcontent">
-                <input type="text" name="" id="" placeholder="Search for Attractions" name="query" [(ngModel)]="query">
+            <div id="Attractions" class="tabcontent" style="display: none;">
+                <input type="text" placeholder="Search for Attractions" name="query" [(ngModel)]="query">
                 <br>
                 <a [routerLink]="['/search',query,'attractions']"><button type="button">Search</button></a>
             </div>
-            <div id="Restaurant" class="tabcontent">
-                <input type="text" name="" id="" placeholder="Search for Restaurant" name="query" [(ngModel)]="query">
+            <div id="Restaurant" class="tabcontent" style="display: none;">
+                <input type="text" placeholder="Search for Restaurant" name="query" [(ngModel)]="query">
                 <br>
                 <a [routerLink]="['/search',query,'restaurant']"><button type="button">Search</button></a>
             </div>
         </form>
     </section>
+    <hr>
 
+    <h1 style="text-align: center;">You Might Like This</h1>
+    <section class="like-these">
+
+        <div class="card-wrapper">
+
+            <div class="card-list ">
+
+                <a href="#" class="like-these-details swiper-slide" *ngFor="let detail of details | slice:-3">
+
+                    <div class="card ">
+
+                        <img src="{{detail.image_url}}" class="photo">
+                        <h1 class="badge">{{detail.address_obj.country}}</h1>
+                        <p class="card-name">{{detail.name}}</p>
+
+                        <a [routerLink]="['/details',detail.location_id]"><button class="card-button material-symbols-outlined">arrow_forward</button></a>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+    <script src="/src/scripts/functions.js"></script>
 </body>
 
 </html>

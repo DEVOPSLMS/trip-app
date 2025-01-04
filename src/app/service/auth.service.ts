@@ -17,6 +17,15 @@ export class AuthService {
       }
     });
   }
+  likeThis(query: string) {
+    console.log("what is happening")
+    return this.http.get(`https://trip-app-ashen-mu.vercel.app/api/query?query=${query}&category=`, {
+      headers: {
+        'accept': 'application/json',
+        'X-Referer': 'http://localhost:4200',
+      }
+    });
+  }
   getQueryDetails(locationid: string) {
 
     return this.http.get(`https://trip-app-ashen-mu.vercel.app/api/querydetails?locationid=${locationid}`, {
