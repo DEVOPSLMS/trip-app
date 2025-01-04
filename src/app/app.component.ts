@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as dotenv from 'dotenv'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +8,9 @@ import * as dotenv from 'dotenv'
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  constructor(){
+    
+  }
   title = 'trip-app';
  
 }

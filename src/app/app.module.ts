@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,22 +8,27 @@ import { SearchComponent } from './component/search/search.component';
 import { provideHttpClient ,HttpClient,HttpHeaders} from '@angular/common/http';
 import { AuthService } from './service/auth.service';
 import { DetailsComponent } from './component/details/details.component';
+import { TestComponent } from './component/test/test.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
-    DetailsComponent
+    DetailsComponent,
+    TestComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    
+  
     
   ],
   providers: [AuthService,provideHttpClient()],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
