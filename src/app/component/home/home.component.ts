@@ -1,9 +1,10 @@
 import { Component, OnInit, } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
+import { Router } from '@angular/router';
 
 declare const console1: any;
 declare const openCity: any;
-
+declare const onWindowLoad: any;
 @Component({
   selector: 'app-home',
   standalone: false,
@@ -16,11 +17,11 @@ export class HomeComponent implements OnInit {
   details: any[] = [];
   location_id: string = '';
   image: string = '';
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,private router:Router) { }
   ngOnInit(): void {
     this.authService.likeThis("Singapore").subscribe((data: any) => {
       this.details = data.data;
-    
+
       this.details.forEach((element: any, index: number) => {
         console.log()
         this.location_id = element.location_id;
@@ -40,6 +41,10 @@ export class HomeComponent implements OnInit {
 
 
   query: string = '';
-
+  navigateToRoute() {
+    if (this.query.trim()) {
+      this.router.navigate(['/search-all', this.query]);
+    }
+  }
 
 }

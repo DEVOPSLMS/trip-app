@@ -9,6 +9,7 @@ import { provideHttpClient ,HttpClient,HttpHeaders} from '@angular/common/http';
 import { AuthService } from './service/auth.service';
 import { DetailsComponent } from './component/details/details.component';
 import { TestComponent } from './component/test/test.component';
+import { SearchAllComponent } from './component/search-all/search-all.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TestComponent } from './component/test/test.component';
     SearchComponent,
     DetailsComponent,
     TestComponent,
+    SearchAllComponent,
     
     
   ],

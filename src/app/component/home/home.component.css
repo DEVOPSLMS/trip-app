@@ -34,7 +34,7 @@ html {
     text-decoration: underline;
 }
 
-.tabs button:focus {
+.tabs button.active {
     text-decoration: underline;
 }
 
@@ -80,7 +80,7 @@ html {
 
 .card-list {
     display: grid;
-    grid-template-columns: auto auto auto ;
+    grid-template-columns: auto auto auto;
 }
 
 .like-these-details {
@@ -139,4 +139,22 @@ html {
 .like-these-details:hover .card-button {
     color: #fff;
     background: #5372F0;
+}
+
+@media only screen and (max-width: 1550px) {
+
+    /* For mobile phones: */
+    .tablinks {
+        font-size: 20px !important;
+
+    }
+
+    .tablinks span {
+        font-size: 18px !important;
+    }
+
+    .like-these-details {
+        width: 250px;
+        
+    }
 }
