@@ -1,0 +1,113 @@
+body {
+    margin-left: -20%;
+    margin-right: -20%;
+
+}
+
+/* Header Text Css */
+.tabs {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-text {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.header-sub-text {
+    text-align: center;
+    color: gray;
+}
+
+.query_text {
+    text-decoration: underline dotted;
+    text-decoration-color: gray;
+    font-size: 50px;
+    border:none;
+    width:20%
+}
+.query_text:focus{
+  outline:none;
+}
+#location_symbol {
+    font-size: 50px;
+    color: red;
+}
+
+
+/* Tabs Button Css */
+.tab {
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.tab .button {
+    flex: 1;
+}
+
+.tablinks {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    border: 0.1px solid #ebebeb;
+    transition: background-color 0.3s ease;
+    color: black;
+    font-size: 20px;
+    padding: 15px 0;
+}
+
+.tablinks.first {
+    border-radius: 10px 0 0 10px;
+}
+
+.tablinks.last {
+    border-radius: 0 10px 10px 0;
+}
+
+
+.button span {
+    font-size: 16px;
+}
+
+
+.tablinks:hover {
+    background-color: #ebebeb;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.tablinks.active{
+    background-color:black;
+    color:white;
+}
+/* Attractions Tabs UI */
+.container {
+    transition: 0.3s ease;
+    margin-top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+}
+#Attractions{
+    display:none;
+}
+#Hotel{
+    display:none;
+}
+#Restaurant{
+    display:none;
+}

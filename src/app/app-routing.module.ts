@@ -4,6 +4,7 @@ import { HomeComponent } from './component/home/home.component';
 import { SearchComponent } from './component/search/search.component';
 import { DetailsComponent } from './component/details/details.component';
 import { TestComponent } from './component/test/test.component';
+import { SearchAllComponent } from './component/search-all/search-all.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect root to 'home'
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'search/:query/:category', component: SearchComponent },
   { path: 'details/:location_id', component: DetailsComponent },
   { path: 'test', component: TestComponent },
+  { path: 'search-all/:query', component: SearchAllComponent },
 ];
 
 @NgModule({
