@@ -102,6 +102,28 @@ body {
     padding: 15px;
     border-radius: 10px;
 }
+
+.card .split-card{
+    display:flex;
+    justify-content: space-between;
+width: 100%;
+}
+.inner-card, .inner-card2 {
+    width: 48%; /* Adjust width to fit the content and allow for padding/margins */
+    box-sizing: border-box; /* Ensure padding and borders are included in the width calculation */
+}
+
+.inner-card2 img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+}
+.inner-card {
+    padding: 10px; /* Adjust padding as needed */
+}
+
+.inner-card2 {
+    padding: 10px; /* Adjust padding as needed */
+}   
 #Attractions{
     display:none;
 }

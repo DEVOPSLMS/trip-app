@@ -19,7 +19,7 @@
 
 
 
-<body onload=onWindowLoad()>
+<body >
 
     <section class="header">
         <h1 class="header-text">Where are you headed?</h1>
@@ -44,17 +44,17 @@
                 <a [routerLink]="['/search-all',query]"><button type="button"class="search" >Search</button></a>
             </div>
             <div id="Hotel" class="tabcontent" style="display: none;">
-                <input type="text" placeholder="Search for Hotels" name="query"class="query" [(ngModel)]="query">
+                <input type="text" placeholder="Search for Hotels" name="query"class="query" [(ngModel)]="query"(keyup.enter)="navigateToHotels()">
                 <br>
                 <a [routerLink]="['/search',query,'hotels']"><button type="button"class="search">Search</button></a>
             </div>
             <div id="Attractions" class="tabcontent" style="display: none;">
-                <input type="text" placeholder="Search for Attractions" name="query" class="query"[(ngModel)]="query">
+                <input type="text" placeholder="Search for Attractions" name="query" class="query"[(ngModel)]="query"(keyup.enter)="navigateToAttractions()">
                 <br>
                 <a [routerLink]="['/search',query,'attractions']"><button type="button"class="search">Search</button></a>
             </div>
             <div id="Restaurant" class="tabcontent" style="display: none;">
-                <input type="text" placeholder="Search for Restaurant" name="query" class="query"[(ngModel)]="query">
+                <input type="text" placeholder="Search for Restaurant" name="query" class="query"[(ngModel)]="query"(keyup.enter)="navigateToRestaurant()">
                 <br>
                 <a [routerLink]="['/search',query,'restaurant']"><button type="button" class="search">Search</button></a>
             </div>
