@@ -41,16 +41,6 @@ function getCategory(evt, category) {
   evt.currentTarget.className += " active";
 }
 // Set the default tab to SearchAll on page load
-function onWindowLoad() {
-  // Show the default tab content
-  document.getElementById("SearchAll").style.display = "block";
-  // Add the "active" class to the first tab button
-  document.querySelector(".tablinks").classList.add("active");
-}
-function SearchAllWindowLoad(){
-  document.getElementById("Attractions").style.display = "block";
-  // Add the "active" class to the first tab button
-  document.querySelector(".tablinks").classList.add("active");
-}
+
 
 

@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 
 declare const console1: any;
 declare const openCity: any;
-declare const onWindowLoad: any;
 @Component({
   selector: 'app-home',
   standalone: false,
@@ -17,7 +16,7 @@ export class HomeComponent implements OnInit {
   details: any[] = [];
   location_id: string = '';
   image: string = '';
-  constructor(private authService: AuthService,private router:Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
   ngOnInit(): void {
     this.authService.likeThis("Singapore").subscribe((data: any) => {
       this.details = data.data;
@@ -36,6 +35,7 @@ export class HomeComponent implements OnInit {
         })
       })
     })
+    this.SearchAllWindowLoad();
 
   }
 
@@ -46,5 +46,33 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/search-all', this.query]);
     }
   }
+  navigateToHotels() {
+    if (this.query.trim()) {
+      this.router.navigate(['/search', this.query,'hotels']);
+    }
+  }
+  navigateToRestaurant() {
+    if (this.query.trim()) {
+      this.router.navigate(['/search', this.query,'restaurant']);
+    }
+  }
+  navigateToAttractions() {
+    if (this.query.trim()) {
+      this.router.navigate(['/search', this.query,'attractions']);
+    }
+  }
 
+  SearchAllWindowLoad(): void {
+    const attractionsElement = document.getElementById("SearchAll");
+    const tabLinkElement = document.querySelector(".tablinks");
+
+    if (attractionsElement) {
+      attractionsElement.style.display = "block";
+    }
+
+    if (tabLinkElement) {
+      tabLinkElement.classList.add("active");
+    }
+
+  }
 }
