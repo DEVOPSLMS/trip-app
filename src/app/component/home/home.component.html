@@ -40,7 +40,7 @@
         <form action="">
             <div id="SearchAll" class="tabcontent" style="display: block;">
                 <input type="text" placeholder="Search for everything" name="query"class="query" [(ngModel)]="query"(keyup.enter)="navigateToRoute()">
-                <br>
+               
                 <a [routerLink]="['/search-all',query]"><button type="button"class="search" >Search</button></a>
             </div>
             <div id="Hotel" class="tabcontent" style="display: none;">
@@ -56,10 +56,11 @@
             <div id="Restaurant" class="tabcontent" style="display: none;">
                 <input type="text" placeholder="Search for Restaurant" name="query" class="query"[(ngModel)]="query"(keyup.enter)="navigateToRestaurant()">
                 <br>
-                <a [routerLink]="['/search',query,'restaurant']"><button type="button" class="search">Search</button></a>
+                <a [routerLink]="['/search',query,'restaurants']"><button type="button" class="search">Search</button></a>
             </div>
         </form>
     </section>
+    <br><br>
     <hr>
 
     <h1 style="text-align: center;">You Might Like This</h1>

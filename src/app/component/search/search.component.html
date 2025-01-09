@@ -9,17 +9,25 @@
 
 <body>
     <section>
+        <h1>RESULTS for <input type="text" class="query_text" (keyup.enter)="navigateBack()" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="query" value="{{query}}"></h1>
         <div class="container" *ngIf="details && details.length > 0">
             <div class="header" *ngFor="let detail of details">
                 <div class="text">
                     <h1 *ngIf="!detail.image_url">Loading image...</h1>
 
                     <img class="photo" *ngIf="detail.image_url" [src]="detail.image_url"
-                        alt="{{ detail.name }} Image" />
-                    <h1 [routerLink]="['/details',detail.location_id]" class="location_name">{{detail.name}}</h1>
-                    <div class="rating_review">
-                        <img class="" *ngIf="detail.location_rating" [src]="detail.location_rating" />
-                        <a>{{detail.location_reviews}} reviews</a>
+                        alt="{{ detail.name }} Image" [routerLink]="['/details',detail.location_id]"/>
+                        <h1 [routerLink]="['/details',detail.location_id]" class="location_name">{{detail.name}}</h1>
+                        <div class="card-text">
+                            
+                            <div class="rating_review">
+                                <a [routerLink]="['/details',detail.location_id]"><button class="card-button material-symbols-outlined">arrow_forward</button></a>
+                                <img class="" *ngIf="detail.location_rating" [src]="detail.location_rating" />
+                                <a>{{detail.location_reviews}} reviews</a>
+                                
+                        </div>
+                  
                        
                     </div>
 

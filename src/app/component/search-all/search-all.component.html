@@ -41,13 +41,14 @@
         </div>
     </section>
     <section id="Attractions">
-        <div class="container" *ngFor="let attractions of attraction; index as i">
+        <div class="container" *ngFor="let attractions of attraction; index as i"[routerLink]="['/details',attractions.location_id]">
             <div class="card">
                 <h3 class="card-name">
-                    {{i+1}}. {{attractions.name}}
+                    {{i+1}}. {{attractions.name}} </h3>
+                
 
-                </h3>
                 <div class="split-card">
+                   
                     <div class="inner-card">
                         <p>{{attractions.rating}}</p><img src="{{attractions.location_rating}}" alt="">
                         <p>( {{attractions.location_reviews}} reviews )</p>
@@ -55,10 +56,12 @@
                     <div class="inner-card2">
                         <img src="{{attractions.image_url}}" alt="">
 
-                    </div>
+                    </div>  
                 </div>
-
+                
+                <a ><button class="card-button material-symbols-outlined">arrow_forward</button></a>
             </div>
+            
         </div>
     </section>
     <section id="Hotel">

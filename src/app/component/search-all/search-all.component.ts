@@ -22,6 +22,7 @@ export class SearchAllComponent implements OnInit {
   private sub: any;
   activeTab: string = '';
   rating:string='';
+  description:string='';
   constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) {
 
   }
@@ -66,10 +67,11 @@ export class SearchAllComponent implements OnInit {
           this.location_rating = locationdetails.rating_image_url;
           this.location_reviews = locationdetails.num_reviews;
           this.rating=locationdetails.rating;
-          
+          this.description=locationdetails.description
          this.attraction[index].rating=this.rating;
           this.attraction[index].location_rating = this.location_rating;
-          this.attraction[index].location_reviews = this.location_reviews
+          this.attraction[index].location_reviews = this.location_reviews;
+          this.attraction[index].description=this.description;
         })
       })
       
