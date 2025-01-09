@@ -40,7 +40,6 @@ function getCategory(evt, category) {
   document.getElementById(category).style.display = "block";
   evt.currentTarget.className += " active";
 }
-// Set the default tab to SearchAll on page load
 
 
 

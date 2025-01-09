@@ -33,12 +33,18 @@ body {
     text-decoration: underline dotted;
     text-decoration-color: gray;
     font-size: 50px;
+    border-radius: 25px;
+    width: 20%;
     border:none;
-    width:20%
 }
-.query_text:focus{
-  outline:none;
+
+.query_text:focus {
+    outline: none;
 }
+.query_text:hover{
+    cursor: pointer;
+}
+
 #location_symbol {
     font-size: 50px;
     color: red;
@@ -90,10 +96,12 @@ body {
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.tablinks.active{
-    background-color:black;
-    color:white;
+
+.tablinks.active {
+    background-color: black;
+    color: white;
 }
+
 /* Attractions Tabs UI */
 .container {
     transition: 0.3s ease;
@@ -101,35 +109,96 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 15px;
     border-radius: 10px;
+    width: 100%;
 }
-
-.card .split-card{
-    display:flex;
+.card{
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.card .card-name{
+    margin-left:10px;
+}
+.split-card {
+    display: flex;
     justify-content: space-between;
-width: 100%;
-}
-.inner-card, .inner-card2 {
-    width: 48%; /* Adjust width to fit the content and allow for padding/margins */
-    box-sizing: border-box; /* Ensure padding and borders are included in the width calculation */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px;
+    width: 100%;
 }
 
-.inner-card2 img {
-    width: 100%; /* Make the image fill the container */
-    height: auto; /* Maintain aspect ratio */
-}
-.inner-card {
-    padding: 10px; /* Adjust padding as needed */
+.inner-card,
+.inner-card2 {
+    width: 48%;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 .inner-card2 {
-    padding: 10px; /* Adjust padding as needed */
-}   
-#Attractions{
-    display:none;
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    padding: 10px;
 }
-#Hotel{
-    display:none;
+
+.inner-card2 img {
+    border-radius: 25px;
+    width: 300px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    float: none; /* Remove float */
+    margin-top: -40px; /* Adjust to align with the heading */
 }
-#Restaurant{
-    display:none;
+
+.card-name {
+    margin-left: 10px;
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.card-button {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin: 30px 0 5px; /* Fixed margin-bottom typo */
+    border: 2px solid #5372F0;
+    background: none;
+    cursor: pointer;
+    color: #5372F0;
+    transform: rotate(-45deg);
+    transition: 0.4s ease;
+}
+
+.card:hover .card-button {
+    color: #fff;
+    background: #5372F0;
+    cursor: pointer !important;
+    transition: background 0.3s, color 0.3s;
+}
+.long-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card:hover{
+    cursor: pointer;
+
+}
+.container:hover{
+    border: 0.1px solid #5372F0;
+    transition: background 0.3s, color 0.3s;
+}
+.card:hover .card-button{
+    color:#fff;
+    background: #5372F0;
+    cursor: pointer !important;
+    transition: background 0.3s, color 0.3s;
+}
+#Attractions {
+    display: none;
+}
+
+#Hotel {
+    display: none;
+}
+
+#Restaurant {
+    display: none;
 }

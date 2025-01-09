@@ -1,0 +1,16 @@
+<div class="search-container">
+    <input
+        type="text"
+        class="search-input"
+        placeholder="Search attractions..."
+        (focus)="onFocus()"
+        (blur)="hideDropdown()"
+        [(ngModel)]="searchQuery"
+        (input)="onSearch()"
+    />
+    <div *ngIf="showDropdown" class="dropdown">
+        <p *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion)">
+            {{ suggestion }}
+        </p>
+    </div>
+</div>

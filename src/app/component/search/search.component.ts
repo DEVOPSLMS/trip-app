@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-search',
@@ -20,7 +21,7 @@ export class SearchComponent implements OnInit {
   location_reviews:number=0;
   locationImages: { [key: string]: string } = {};
   private sub: any;
-  constructor(private authService: AuthService, private route: ActivatedRoute) { }
+  constructor(private authService: AuthService, private route: ActivatedRoute,private router:Router) { }
   ngOnInit(): void {
 
     this.sub = this.route.params.subscribe(params => {
@@ -53,5 +54,9 @@ export class SearchComponent implements OnInit {
       })
     })
   }
-
+  navigateBack(){
+    if (this.query.trim()) {
+      this.router.navigate(['/search', this.query,this.category]);
+    }
+  }
 }

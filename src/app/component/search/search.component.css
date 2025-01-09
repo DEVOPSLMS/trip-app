@@ -5,13 +5,30 @@
   
     justify-content:space-around;
 }
+.query_text {
+    text-decoration: underline dotted;
+    text-decoration-color: gray;
+    font-size: 30px;
+    border: none;
+    width: 20%
+}
+.query_text:focus {
+    outline: none;
+}
 
+.rating_review{
+    display:flex;
+
+    align-items: center;
+    gap:0.5px;
+}
 .photo {
     width: 400px;
     height: 250px;
     object-fit: cover;
     padding: 0 10px 0 0;
     border-radius: 25px;
+    transition: transform .2s; 
 }
 .location_name:hover{
     text-decoration: underline;
@@ -20,4 +37,36 @@
 body {
     font-family: 'Poppins', serif;
 
+}
+.card-button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid #5372F0;
+    background: none;
+    cursor: pointer;
+    color: #5372F0;
+    transform: rotate(-45deg);
+    transition: 0.4s ease;
+    font-size: 18px;
+}
+.card-button:hover{
+    cursor: pointer;
+    background:#5372F0;
+    color:#fff;
+}
+.photo:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+@media only screen and (max-width: 1550px) {
+    body{
+        margin: 0 -20% 0 -20%;
+    }
+    
+
+
+    .photo{
+        width:350px;
+    }
 }
