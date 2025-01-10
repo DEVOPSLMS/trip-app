@@ -102,6 +102,9 @@ app.get('/api/queryimage', (req, res) => {
     res.status(500).send('Error with API request');
   });
 });
+app.get('/api/console',(req,res)=>{
+  res.json(apiKey);
+})
 app.options('*', cors());
 
 module.exports = app;

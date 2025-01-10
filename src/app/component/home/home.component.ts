@@ -18,22 +18,22 @@ export class HomeComponent implements OnInit {
   image: string = '';
   constructor(private authService: AuthService, private router: Router) { }
   ngOnInit(): void {
-    // this.authService.likeThis("Singapore").subscribe((data: any) => {
-    //   this.details = data.data;
-    //   this.details.forEach((element: any, index: number) => {
-    //     console.log()
-    //     this.location_id = element.location_id;
-    //     this.authService.getQueryImage(this.location_id).subscribe((query: any) => {
-    //       console.log(query);
-    //       if (query.data.length > 0) {
-    //         this.image = query.data[0].images.large.url;
-    //         this.details[index].image_url = this.image;
+    this.authService.likeThis("Singapore").subscribe((data: any) => {
+      this.details = data.data;
+      this.details.forEach((element: any, index: number) => {
+        console.log()
+        this.location_id = element.location_id;
+        this.authService.getQueryImage(this.location_id).subscribe((query: any) => {
+          console.log(query);
+          if (query.data.length > 0) {
+            this.image = query.data[0].images.large.url;
+            this.details[index].image_url = this.image;
 
-    //       }
+          }
 
-    //     })
-    //   })
-    // })
+        })
+      })
+    })
     this.SearchAllWindowLoad();
 
   }
