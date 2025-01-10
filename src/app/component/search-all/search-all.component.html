@@ -24,18 +24,18 @@
         <p class="header-sub-text">Discover the Attractions, Hotels and Restaurants in {{query}}</p>
         <div class="tab">
             <div class="button">
-                <button class="tablinks first" onclick="getCategory(event, 'Attractions')"><span
+                <button class="tablinks first" (click)="selectTab('attraction')"onclick="getCategory(event, 'Attractions')"><span
                         class="material-symbols-outlined">apartment</span>Attractions</button>
             </div>
             <div class="button">
 
-                <button class="tablinks" onclick="getCategory(event, 'Hotel')"><span
+                <button class="tablinks"(click)="selectTab('hotel')" onclick="getCategory(event, 'Hotel')"><span
                         class="material-symbols-outlined">attractions</span>Hotels</button>
             </div>
             <div class="button">
 
-                <button class="tablinks last" onclick="getCategory(event, 'Restaurant')"><span
-                        class="material-symbols-outlined">restaurant</span>Restaurants</button>
+               <button class="tablinks last" (click)="selectTab('restaurant')"onclick="getCategory(event, 'Restaurant')"><span
+                class="material-symbols-outlined">restaurant</span>Restaurants</button>
             </div>
 
         </div>
@@ -44,42 +44,78 @@
         <div class="container" *ngFor="let attractions of attraction; index as i"[routerLink]="['/details',attractions.location_id]">
             <div class="card">
                 <h3 class="card-name">
-                    {{i+1}}. {{attractions.name}} </h3>
+                    {{i+1}}. {{attractions.name}} <a ><button class="card-button material-symbols-outlined">arrow_forward</button></a></h3>
                 
 
                 <div class="split-card">
-                   
                     <div class="inner-card">
-                        <p>{{attractions.rating}}</p><img src="{{attractions.location_rating}}" alt="">
-                        <p>( {{attractions.location_reviews}} reviews )</p>
+                            <p class="inner-card-rating">{{attractions.rating}}</p><img src="{{attractions.location_rating}}"class="inner-card-photo" alt="">
+                            <p>( {{attractions.location_reviews}} reviews )</p>
                     </div>
+                    
                     <div class="inner-card2">
                         <img src="{{attractions.image_url}}" alt="">
 
                     </div>  
+            
+                    
                 </div>
                 
-                <a ><button class="card-button material-symbols-outlined">arrow_forward</button></a>
+                
             </div>
             
         </div>
     </section>
     <section id="Hotel">
-        <div class="container">
+        <div class="container" *ngFor="let hotels of hotel; index as i"[routerLink]="['/details',hotels.location_id]">
             <div class="card">
                 <h3 class="card-name">
-                    1. Hotel Name
-                </h3>
+                    {{i+1}}. {{hotels.name}} <a ><button class="card-button material-symbols-outlined">arrow_forward</button></a></h3>
+                
+
+                <div class="split-card">
+                    <div class="inner-card">
+                            <p class="inner-card-rating">{{hotels.rating}}</p><img src="{{hotels.location_rating}}"class="inner-card-photo" alt="">
+                            <p>( {{hotels.location_reviews}} reviews )</p>
+                    </div>
+                    
+                    <div class="inner-card2">
+                        <img src="{{hotels.image_url}}" alt="">
+
+                    </div>  
+            
+                    
+                </div>
+                
+                
             </div>
+            
         </div>
     </section>
     <section id="Restaurant">
-        <div class="container">
+        <div class="container" *ngFor="let restaurants of restaurant; index as i"[routerLink]="['/details',restaurants.location_id]">
             <div class="card">
                 <h3 class="card-name">
-                    1. Restaurant Name
-                </h3>
+                    {{i+1}}. {{restaurants.name}} <a ><button class="card-button material-symbols-outlined">arrow_forward</button></a></h3>
+                
+
+                <div class="split-card">
+                    <div class="inner-card">
+                            <p class="inner-card-rating">{{restaurants.rating}}</p><img src="{{restaurants.location_rating}}"class="inner-card-photo" alt="">
+                            <p>( {{restaurants.location_reviews}} reviews )</p>
+                    </div>
+                    
+                    <div class="inner-card2">
+                        <img src="{{restaurants.image_url}}" alt="">
+
+                    </div>  
+            
+                    
+                </div>
+                
+                
             </div>
+            
         </div>
     </section>
 </body>

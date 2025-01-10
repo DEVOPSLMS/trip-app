@@ -41,9 +41,7 @@ body {
 .query_text:focus {
     outline: none;
 }
-.query_text:hover{
-    cursor: pointer;
-}
+
 
 #location_symbol {
     font-size: 50px;
@@ -125,18 +123,27 @@ body {
     width: 100%;
 }
 
-.inner-card,
+.inner-card{
+    display: flex;
+    font-size: 40px;
+  
+    gap:10px;
+    flex-direction: row;
+}
+.content {
+    display: flex;
+    align-items: center; /* Align content horizontally */
+    gap: 10px; /* Space between elements */
+}
 .inner-card2 {
     width: 48%;
     box-sizing: border-box;
     padding: 10px;
+    display: flex;
+    justify-content: flex-end; 
 }
 
-.inner-card2 {
-    display: flex;
-    justify-content: flex-end; /* Align image to the right */
-    padding: 10px;
-}
+
 
 .inner-card2 img {
     border-radius: 25px;
@@ -154,8 +161,8 @@ body {
 }
 
 .card-button {
-    height: 45px;
-    width: 45px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     margin: 30px 0 5px; /* Fixed margin-bottom typo */
     border: 2px solid #5372F0;
@@ -164,6 +171,7 @@ body {
     color: #5372F0;
     transform: rotate(-45deg);
     transition: 0.4s ease;
+    font-size:16px;
 }
 
 .card:hover .card-button {
