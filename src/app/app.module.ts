@@ -10,7 +10,8 @@ import { AuthService } from './service/auth.service';
 import { DetailsComponent } from './component/details/details.component';
 import { TestComponent } from './component/test/test.component';
 import { SearchAllComponent } from './component/search-all/search-all.component';
-
+import { register } from 'swiper/element/bundle';
+register()
 @NgModule({
   declarations: [
     AppComponent,

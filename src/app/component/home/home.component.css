@@ -5,11 +5,18 @@ body {
 
 html {
     font-size: 14px;
+    margin-left: 20%;
+    margin-right: 20%;
 }
-
+.mobile_search{
+    display:none;
+}
 .header-text {
     text-align: center;
     font-size: 50px;
+}
+.header-mobile{
+    display:none;
 }
 
 .tabs {
@@ -18,7 +25,7 @@ html {
     padding: 30px;
 }
 
-.tabs button {
+.tablinks {
     background-color: white;
     text-align: center;
     border: none;
@@ -26,7 +33,7 @@ html {
     font-size: 30px;
     padding: 16px 32px;
     cursor: pointer;
-
+    text-underline-offset: 8px;
 }
 
 .tabs button:hover {
@@ -51,7 +58,7 @@ html {
 
 .tabcontent input {
     border-radius: 25px;
-    width: 800px;
+    width: 90%;
     height: 60px;
     border: 0.2px groove lightgray;
     font-size: 20px;
@@ -66,10 +73,9 @@ html {
 
 .tabcontent input:focus {
     border: 1px solid #555;
-    
 }
 
-.tabcontent button {
+.search {
     border-radius: 25px;
     font-size: 25px;
     background-color: black;
@@ -82,7 +88,7 @@ html {
     color:white;
 }
 
-.tabcontent button:hover {
+.search:hover {
     opacity: 0.8;
     cursor: pointer;
     transform: opacity 0.3 ease;
@@ -90,11 +96,12 @@ html {
 
 .card-list {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:16px;
 }
 
 .like-these-details {
-    width: 350px;
+    width: 100%;
     display: block;
     background: #fff;
     padding: 18px;
@@ -167,4 +174,33 @@ html {
         width: 250px;
         
     }
+}
+@media only screen and (max-width: 900px) {
+    html{
+        margin-left:5%;
+    }
+  .header-text{
+    display:none;
+  }
+
+
+  .header-mobile{
+    display:block;
+  }
+  .search{
+    display:none;
+  }
+  a{
+    text-decoration: none;
+  }
+  .mobile_search{
+    display:block;
+    color:white;
+    background:black;
+    border-radius: 15px;
+    font-size: 25px;
+    text-decoration: none;
+    margin:10% 37% 0;
+    padding:8px;
+  }
 }
