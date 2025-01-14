@@ -1,16 +1,29 @@
 body {
     font-family: 'Poppins', serif;
     height: 100vh;
+    transition: opacity 0.3s;
 }
 
 html {
     font-size: 14px;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
 }
-
+.mobile_search{
+    display:none;
+}
 .header-text {
     text-align: center;
     font-size: 50px;
 }
+.header-mobile{
+    display:none;
+}
+.background-active {
+    background-color: lightgray ;
+  
+  }
 
 .tabs {
     overflow: hidden;
@@ -18,15 +31,15 @@ html {
     padding: 30px;
 }
 
-.tabs button {
-    background-color: white;
+.tablinks {
+    background: none;
     text-align: center;
     border: none;
     color: black;
     font-size: 30px;
     padding: 16px 32px;
     cursor: pointer;
-
+    text-underline-offset: 8px;
 }
 
 .tabs button:hover {
@@ -48,10 +61,57 @@ html {
     display: inline-block;
     position: relative;
 }
+.page-focused {
+    filter: blur(5px); /* Apply blur effect to the entire page */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional dark overlay on the background */
+}
+.you{
+    font-size: 1.5rem;
+}
+.dropdown {
+    position: absolute;
+    top: 100%; /* Position the dropdown below the input */
+    left: 50%; /* Start from the horizontal center of the parent */
+    transform: translateX(-50%); /* Adjust to center the dropdown */
+    width: 54.2%; /* Match the width of the input */
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 25px 25px; /* Optional: Slight rounding for better aesthetics */
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 1000px;
+    overflow-y: auto; /* Enable scrolling for long lists */
+    border-top:none;
+}
 
+/* Hide the scrollbar */
+.dropdown::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+.dropdown {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.dropdown p {
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.dropdown p:hover {
+    background: #f4f4f4; /* Hover effect */
+}
+.tabcontent{
+    position: relative;
+}
 .tabcontent input {
-    border-radius: 25px;
-    width: 90%;
+    border-radius: 25px 25px 25px 25px;
+    width: 50%;
     height: 60px;
     border: 0.2px groove lightgray;
     font-size: 20px;
@@ -65,40 +125,51 @@ html {
 }
 
 .tabcontent input:focus {
-    border: 1px solid #555;
-    
+    border-bottom:none;
+    outline:none;
+    opacity:1;
+    border-radius:25px 25px 0 0;
 }
 
-.tabcontent button {
+
+.search {
     border-radius: 25px;
     font-size: 25px;
     background-color: black;
     margin: 40px;
     padding: 10px;
-    margin-right: 4%;
+    margin-right: 23%;
     position: absolute;
     right:5px;
     top: -35px;
     color:white;
 }
 
-.tabcontent button:hover {
+.search:hover {
     opacity: 0.8;
     cursor: pointer;
     transform: opacity 0.3 ease;
 }
-
+.card-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 .card-list {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    gap:25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:16px;
+    width:80%;
+    margin-left:7%;
+    
 }
 
 .like-these-details {
-
+    width: 100%;
     display: block;
     background: #fff;
-    padding: 10px;
+    padding: 18px;
     border-radius: 12px;
     text-decoration: none;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
@@ -152,130 +223,70 @@ html {
     background: #5372F0;
 }
 
+@media only screen and (max-width: 1550px) {
 
-@media only screen and (max-width: 1999px) {
-
-   
-}
-/* Extra Small (Mobile Portrait) */
-@media (max-width: 480px) {
-    /* Styles for small mobile phones */
-}
-
-/* Small (Mobile Landscape) */
-@media (max-width: 768px) {
-    /* Styles for larger mobile devices */
-}
-
-/* Medium (Tablets Portrait) */
-@media (max-width: 1024px) {
-    /* Styles for tablets */
-}
-
-/* Large (Tablets Landscape / Small Laptops) */
-@media (max-width: 1280px) {
-    /* Styles for smaller laptops */
-   
-       .tabcontent button{
-        font-size: 20px;
-        
-    }
+    /* For mobile phones: */
     .tablinks {
-        font-size: 16px !important;
+        font-size: 20px !important;
 
     }
 
     .tablinks span {
-        font-size: 14px !important;
+        font-size: 18px !important;
     }
-
-  .like-these-details {
-        width: 150px;
-        
-    }
-    
-    .card-list {
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-        gap:10px;
-    }
-}
-
-/* Extra Large (Large Screens) */
-@media (max-width: 1600px) {
-    /* Styles for large screens and desktops */
-    .tabcontent button{
-        font-size: 16px;
-        
-    }
-    .tablinks {
-        font-size: 16px ;
-
-    }
-
-    .tablinks span {
-        font-size: 16px ;
-    }
-   
 
     .like-these-details {
         width: 250px;
         
     }
-    .card-list {
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-        gap:10px;
-    }
 }
-@media (max-width: 1800px) {
-    /* Styles for large screens and desktops */
-    .tabcontent button{
-        font-size: 24px;
-        
-    }
-    .tablinks {
-        font-size: 20px ;
-
-    }
-
-    .tablinks span {
-        font-size: 18px ;
-    }
-
-
-    .like-these-details {
-        width: 250px;
-        
-    }
-    .card-list {
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-        gap:10px;
-    }
+@media only screen and (max-width: 900px) {
+    *,
+*:before,
+*:after {
+    box-sizing: inherit; /* Prevent elements from overflowing unintentionally */
 }
-@media (max-width: 2000px) {
-    /* Styles for large screens and desktops */
-    .tabcontent button{
-        font-size: 24px;
-        
-    }
-    .tablinks {
-        font-size: 20px ;
+  html, body{
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .card-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Smaller cards for narrow screens */
+    gap: 12px; /* Reduce spacing */
+    width: 95%; /* Increase flexibility on smaller screens */
+}
 
-    }
+.like-these-details {
+    padding: 12px; /* Reduce padding for smaller cards */
+    font-size: 14px; /* Adjust font size for readability */
+}
+  .header-text{
+    display:none;
+  }
+  input{
+    font-size:20px;
+  }
 
-    .tablinks span {
-        font-size: 18px ;
-    }
-    input{
-        width:400px;
-    }
-
- 
-    .card-list {
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-        gap:10px;
-    }
+  .header-mobile{
+    display:block;
+  }
+  .search{
+    display:none;
+  }
+  a{
+    text-decoration: none;
+  }
+  .mobile_search{
+    display:block;
+    color:white;
+    background:black;
+    border-radius: 15px;
+    font-size: 25px;
+    text-decoration: none;
+    margin:10% 37% 0;
+    padding:8px;
+  }
 }
