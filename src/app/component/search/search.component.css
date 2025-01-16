@@ -1,8 +1,9 @@
+
 .container {
     display: inline-grid;
     gap:10px;
     grid-template-columns: 400px 400px 400px  ;
-  
+
     justify-content:space-around;
 }
 .query_text {
@@ -60,9 +61,7 @@ body {
     transform: scale(1.2);
 }
 @media only screen and (max-width: 1550px) {
-    body{
-        margin: 0 -20% 0 -20%;
-    }
+ 
     
 
 

@@ -20,10 +20,7 @@ html {
 .header-mobile{
     display:none;
 }
-.background-active {
-    background-color: lightgray ;
-  
-  }
+
 
 .tabs {
     overflow: hidden;
@@ -78,11 +75,13 @@ html {
     border: 1px solid #ccc;
     border-radius: 0 0 25px 25px; /* Optional: Slight rounding for better aesthetics */
     box-sizing: border-box;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.507);
     z-index: 10;
     max-height: 1000px;
     overflow-y: auto; /* Enable scrolling for long lists */
     border-top:none;
+
+    
 }
 
 /* Hide the scrollbar */
@@ -101,6 +100,16 @@ html {
     padding: 10px;
     font-size: 20px;
     cursor: pointer;
+    text-align: left;
+    margin-left:2.5%;
+}
+.dropdown h1 {
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: left;
+    margin-left:2.5%;
 }
 
 .dropdown p:hover {
@@ -129,6 +138,7 @@ html {
     outline:none;
     opacity:1;
     border-radius:25px 25px 0 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.507);
 }
 
 

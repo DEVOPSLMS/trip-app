@@ -46,6 +46,7 @@
                 <a [routerLink]="['/search-all',query]"><button type="button"class="search" >Search</button></a>
                 <a [routerLink]="['/search-all',query]"><button type="button"class="mobile_search" >Search</button></a>
                 <div *ngIf="showDropdown" class="dropdown">
+                    <hr>
                     <h1>Suggestion</h1>
                     <p>Query: {{query}}</p>
                     <p>Singapore</p>
@@ -56,33 +57,48 @@
                 </div>
             </div>
             <div id="Hotel" class="tabcontent" style="display: none;">
-                <input type="text" placeholder="Search for everything" name="query"class="query"(focus)="onFocus()" autocomplete="off"
+                <input type="text" placeholder="Search for hotel" name="query"class="query"(focus)="onFocus()" autocomplete="off"
                 (blur)="onBlur()" [(ngModel)]="query"(keyup.enter)="navigateToRoute()"(input)="onSearch()">         
                 <a [routerLink]="['/search',query,'hotels']"><button type="button"class="search">Search</button></a>
                 <a [routerLink]="['/search',query,'hotels']"><button type="button"class="mobile_search" >Search</button></a>
                 <div *ngIf="showDropdown" class="dropdown">
+                    <hr>
+                    <h1>Suggestion</h1>
+                    <p>Query: {{query}}</p>
+                    <p>Singapore</p>
+                    <h1>Last Viewed</h1>
                     <p *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
                         {{ suggestion }}
                     </p>
                 </div>
             </div>
             <div id="Attractions" class="tabcontent" style="display: none;">
-                <input type="text" placeholder="Search for everything" name="query"class="query"(focus)="onFocus()" autocomplete="off"
+                <input type="text" placeholder="Search for attractions" name="query"class="query"(focus)="onFocus()" autocomplete="off"
                 (blur)="onBlur()" [(ngModel)]="query"(keyup.enter)="navigateToRoute()"(input)="onSearch()">
                 <a [routerLink]="['/search',query,'attractions']"><button type="button"class="search">Search</button></a>
                 <a [routerLink]="['/search',query,'attractions']"><button type="button"class="mobile_search" >Search</button></a>
                 <div *ngIf="showDropdown" class="dropdown">
+                    <hr>
+                    <h1>Suggestion</h1>
+                    <p>Query: {{query}}</p>
+                    <p>Singapore</p>
+                    <h1>Last Viewed</h1>
                     <p *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
                         {{ suggestion }}
                     </p>
                 </div>
             </div>
             <div id="Restaurant" class="tabcontent" style="display: none;">
-                <input type="text" placeholder="Search for everything" name="query"class="query"(focus)="onFocus()" autocomplete="off"
+                <input type="text" placeholder="Search for restaurants" name="query"class="query"(focus)="onFocus()" autocomplete="off"
                 (blur)="onBlur()" [(ngModel)]="query"(keyup.enter)="navigateToRoute()"(input)="onSearch()">
                 <a [routerLink]="['/search',query,'restaurants']"><button type="button" class="search">Search</button></a>
                 <a [routerLink]="['/search',query,'restaurants']"><button type="button"class="mobile_search" >Search</button></a>
                 <div *ngIf="showDropdown" class="dropdown">
+                    <hr>
+                    <h1>Suggestion</h1>
+                    <p>Query: {{query}}</p>
+                    <p>Singapore</p>
+                    <h1>Last Viewed</h1>
                     <p *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
                         {{ suggestion }}
                     </p>
