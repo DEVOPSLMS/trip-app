@@ -59,7 +59,7 @@
     </div>
     <hr>
     <div class="description">
-        <span>{{details.rating}}</span><img src="{{details.rating_image_url}}" alt=""><span>{{details.num_reviews}} reviews </span> <a style="float:right;" target="_blank" href="{{details.website}}">Visit Official Website</a>
+        <span>{{details.rating}}</span><img src="{{details.rating_image_url}}" alt=""><span>{{details.num_reviews}} reviews </span> <a style="float:right;"*ngIf="details.web_url" target="_blank" href="{{details.web_url}}">Visit Website</a>
         <p>{{details.description}}</p>
     </div>
     <hr>

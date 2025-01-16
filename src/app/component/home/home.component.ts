@@ -29,14 +29,13 @@ export class HomeComponent implements OnInit {
     this.pastSearches = savedSearches ? JSON.parse(savedSearches) : [];
     this.suggestions = [...this.pastSearches];
     this.SearchAllWindowLoad();
-//this.getItems();
+    //this.getItems();
   }
 
 private getItems(){
   this.authService.likeThis("Singapore").subscribe((data: any) => {
     this.details = data.data;
     this.details.forEach((element: any, index: number) => {
-      console.log()
       this.location_id = element.location_id;
       this.authService.getQueryImage(this.location_id).subscribe((query: any) => {
         console.log(query);
@@ -100,7 +99,7 @@ private getItems(){
       if (this.query.trim() === '') {
         this.showDropdown = false; // Hide dropdown only if the query is empty
       }
-    }, 100);
+    });
     }
    
     selectSuggestion(suggestion: string) {

@@ -31,9 +31,6 @@ export class SearchAllComponent implements OnInit {
       this.query = params['query'];
       this.SearchAllWindowLoad();
       this.selectTab(this.activeTab);
-      
-   
-
     })
   }
 
@@ -44,11 +41,11 @@ export class SearchAllComponent implements OnInit {
       this.restaurant.forEach((element: any, index: number) => {
 
         this.location_id = element.location_id;
-    
+
         this.authService.getQueryImage(this.location_id).subscribe((query: any) => {
 
           if (query.data.length > 0) {
- 
+
             this.image = query.data[0].images.large.url;
             this.restaurant[index].image_url = this.image;
 
@@ -71,36 +68,36 @@ export class SearchAllComponent implements OnInit {
     })
   }
   private getAttractions() {
-      this.authService.getQuery(this.query, 'attractions').subscribe((query: any) => {
-        this.attraction = query.data;
-        console.log(this.attraction);
-        this.attraction.forEach((element: any, index: number) => {
+    this.authService.getQuery(this.query, 'attractions').subscribe((query: any) => {
+      this.attraction = query.data;
+      console.log(this.attraction);
+      this.attraction.forEach((element: any, index: number) => {
 
-          this.location_id = element.location_id;
-          this.authService.getQueryImage(this.location_id).subscribe((query: any) => {
+        this.location_id = element.location_id;
+        this.authService.getQueryImage(this.location_id).subscribe((query: any) => {
 
-            if (query.data.length > 0) {
-              this.image = query.data[0].images.large.url;
-              this.attraction[index].image_url = this.image;
+          if (query.data.length > 0) {
+            this.image = query.data[0].images.large.url;
+            this.attraction[index].image_url = this.image;
 
-            }
+          }
 
-          })
-          this.authService.getQueryDetails(this.location_id).subscribe((locationdetails: any) => {
-
-            this.location_rating = locationdetails.rating_image_url;
-            this.location_reviews = locationdetails.num_reviews;
-            this.rating = locationdetails.rating;
-            this.description = locationdetails.description
-            this.attraction[index].rating = this.rating;
-            this.attraction[index].location_rating = this.location_rating;
-            this.attraction[index].location_reviews = this.location_reviews;
-            this.attraction[index].description = this.description;
-          })
         })
+        this.authService.getQueryDetails(this.location_id).subscribe((locationdetails: any) => {
 
+          this.location_rating = locationdetails.rating_image_url;
+          this.location_reviews = locationdetails.num_reviews;
+          this.rating = locationdetails.rating;
+          this.description = locationdetails.description
+          this.attraction[index].rating = this.rating;
+          this.attraction[index].location_rating = this.location_rating;
+          this.attraction[index].location_reviews = this.location_reviews;
+          this.attraction[index].description = this.description;
+        })
       })
-    
+
+    })
+
 
   }
   private getHotels() {
@@ -133,7 +130,7 @@ export class SearchAllComponent implements OnInit {
       })
 
     })
-  
+
   }
   navigateBack() {
     if (this.query.trim()) {
@@ -157,18 +154,18 @@ export class SearchAllComponent implements OnInit {
     this.activeTab = category;
     if (this.activeTab === 'attraction') {
       this.getAttractions();
-      this.hotel=[];
-      this.restaurant=[];
-  } else if (this.activeTab === 'restaurant') {
+      this.hotel = [];
+      this.restaurant = [];
+    } else if (this.activeTab === 'restaurant') {
       this.getRestaurant();
-      this.hotel=[];
-      this.attraction=[];
+      this.hotel = [];
+      this.attraction = [];
 
-  } else if (this.activeTab === 'hotel') {
+    } else if (this.activeTab === 'hotel') {
       this.getHotels();
-      this.restaurant=[];
-      this.attraction=[];
-  }
+      this.restaurant = [];
+      this.attraction = [];
+    }
   }
 
 }

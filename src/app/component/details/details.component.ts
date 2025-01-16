@@ -18,6 +18,9 @@ export class DetailsComponent implements OnInit {
   details: any;
   location_images:any[] = [];
   ngOnInit(): void {
+    this.getDetails();
+  }
+  private getDetails(){
     this.sub = this.route.params.subscribe(params => {
       this.location_id = params['location_id'];
       this.authService.getQueryDetails(this.location_id).subscribe((details:any)=>{
