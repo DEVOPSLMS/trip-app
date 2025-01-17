@@ -5,7 +5,7 @@ const cors = require('cors')
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:4200', // Temporarily allow all origins
+  origin: 'https://trip-app-80a28.web.app', // Temporarily allow all origins
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization','Referer','accept','X-Referer']
 }));

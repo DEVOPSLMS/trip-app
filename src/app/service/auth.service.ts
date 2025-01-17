@@ -22,7 +22,7 @@ export class AuthService {
     return this.http.get(`https://trip-app-ashen-mu.vercel.app/api/query?query=${query}&category=`, {
       headers: {
         'accept': 'application/json',
-        'X-Referer': 'http://localhost:4200',
+        'X-Referer': 'https://trip-app-80a28.web.app',
       }
     });
   }
@@ -31,7 +31,7 @@ export class AuthService {
     return this.http.get(`https://trip-app-ashen-mu.vercel.app/api/querydetails?locationid=${locationid}`, {
       headers: {
         'accept': 'application/json',
-        'X-Referer': 'http://localhost:4200',
+        'X-Referer': 'https://trip-app-80a28.web.app',
         
       }
     });
@@ -41,7 +41,7 @@ export class AuthService {
     return this.http.get(`https://trip-app-ashen-mu.vercel.app/api/queryimage?locationid=${locationid}`, {
       headers: {
         'accept': 'application/json',
-        'X-Referer': 'http://localhost:4200'
+        'X-Referer': 'https://trip-app-80a28.web.app/'
       }
     });
   }
