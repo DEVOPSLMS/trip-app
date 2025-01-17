@@ -70,7 +70,7 @@ html {
     top: 100%; /* Position the dropdown below the input */
     left: 50%; /* Start from the horizontal center of the parent */
     transform: translateX(-50%); /* Adjust to center the dropdown */
-    width: 54.2%; /* Match the width of the input */
+    width: 53.3%; /* Match the width of the input */
     background: white;
     border: 1px solid #ccc;
     border-radius: 0 0 25px 25px; /* Optional: Slight rounding for better aesthetics */
@@ -80,7 +80,7 @@ html {
     max-height: 1000px;
     overflow-y: auto; /* Enable scrolling for long lists */
     border-top:none;
-
+    background-color: white;
     
 }
 
@@ -137,8 +137,12 @@ html {
     border-bottom:none;
     outline:none;
     opacity:1;
-    border-radius:25px 25px 0 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.507);
+    border-radius: 25px 25px 0 0;
+    -webkit-border-radius: 25px 25px 0 0;
+    -moz-border-radius: 25px 25px 0 0;
+    -ms-border-radius: 25px 25px 0 0;
+    -o-border-radius: 25px 25px 0 0;
 }
 
 

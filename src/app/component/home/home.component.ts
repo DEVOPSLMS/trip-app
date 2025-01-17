@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     this.pastSearches = savedSearches ? JSON.parse(savedSearches) : [];
     this.suggestions = [...this.pastSearches];
     this.SearchAllWindowLoad();
-    //this.getItems();
+    this.getItems();
   }
 
 private getItems(){
